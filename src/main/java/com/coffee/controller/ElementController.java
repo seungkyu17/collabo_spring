@@ -23,7 +23,7 @@ public class ElementController {
         return bean;
     }
 
-    @GetMapping("/Element/list")
+    @GetMapping("/element/list")
     public List<Element> test02(){
         List<Element> elementList = new ArrayList<>();
         elementList.add(new Element(1, "프렌치 바게트", 1000, "bread", 111, "french_baguette_01.png", "프랑스의 대표적인 빵 중 하나로, 길쭉하고 얇은 형태의 식빵입니다. 바삭하면서도 촉촉한 식감과 진한 맛이 특징입니다."));
