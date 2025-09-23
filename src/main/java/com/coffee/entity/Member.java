@@ -19,7 +19,7 @@ import java.time.LocalDate;
 public class Member {
     @Id //이 컬럼은 primary key 입니다.
     @GeneratedValue(strategy = GenerationType.AUTO) //기본키 생성 전략
-    @Column(name = "member_id")
+    @Column(name = "member_id") //컬럼 이름을 변경합니다.
     private Long id;
 
     @NotBlank(message = "이름은 필수 입력 사항입니다.")
