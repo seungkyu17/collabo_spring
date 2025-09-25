@@ -27,7 +27,7 @@ public class Product {
     private String name;
 
     @Column(nullable = false)
-    @Min(value = 100, message = "가격은 100원 이상이어야 합니다.") //cf) @Max
+    @Min(value = 100, message = "가격은 100원 이상이어야 합니다.") //cf: @Max
     private int price;
 
     @Enumerated(EnumType.STRING)
