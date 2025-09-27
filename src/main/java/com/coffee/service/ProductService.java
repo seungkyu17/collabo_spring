@@ -42,7 +42,11 @@ public class ProductService {
         return product.orElse(null);
     }
 
-    public Optional<Product> findById(Long id) {
-        return productRepository.findById(id);
+    public Optional<Product> findById(Long id) {return productRepository.findById(id);
+
+    }
+
+    public Optional<Product> findProductById(Long productId) {
+        return this.productRepository.findById(productId);
     }
 }

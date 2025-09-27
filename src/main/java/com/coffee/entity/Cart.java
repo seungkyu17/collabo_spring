@@ -5,6 +5,17 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
+/* [테스트 시나리오]
+    최초 고객이 장바구니에 품목을 담았을때 추가
+     1. 카트 객체 생성
+     2. 카트 상품 객체 생성
+    그 고객이 다른 상품을 장바구니에 담았을때 이전 카트에 추가
+     1. 카트 상품 객체 생성 
+    이전 카트상품을 추가로 더 구매했을때 추가
+     1. 이전 카트 상품을 갱신*/
+
 //고객(Member)이 사용하는 카트 엔터티 클래스입니다.
 @Getter @Setter @ToString
 @Entity
@@ -19,4 +30,12 @@ public class Cart {
     @OneToOne(fetch = FetchType.LAZY) //일대일 연관 관계 매핑, 지연 로딩
     @JoinColumn(name = "member_id")
     private Member member;
+
+    //'Cart 1개' 에는 여러개의 '카트 상품'들이 담겨질 수 있으므로, '컬렉션' 형태로 작성해야 합니다.
+    //CascadeType.All : '카트' 정보에 변경/수정/삭제 등의 변동 사항이 발생하면 '카트 상품'에 전부 반영시켜 주세요.
+    //CascadeType 와 관련하여 데이터 베이스의 on delete set null, on delete cascade 공부.
+    //'mappedBy 구문' 이 있는곳은 '연관 관계' 의 주인이 아니고, 단지 읽기 전용, 매핑 정보만 가지고 있습니다.
+    //주의 사항) "cart" : 연관 관계의 주인 엔터티에 들어있는 변수명과 반드시 동일해야 합니다.
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<CartProduct> cartProducts;
 }
