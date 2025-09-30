@@ -26,6 +26,7 @@ public class Product {
     @Column(nullable = false) //값 입력 필수
     private String name;
 
+
     @Column(nullable = false)
     @Min(value = 100, message = "가격은 100원 이상이어야 합니다.") //cf: @Max
     private int price;
@@ -48,4 +49,8 @@ public class Product {
     private String description;
 
     private LocalDate inputdate; //입고 일자
+
+//    public String getName() {
+//        return name;
+//    }
 }
