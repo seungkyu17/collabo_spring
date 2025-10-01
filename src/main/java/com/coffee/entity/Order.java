@@ -31,17 +31,4 @@ public class Order { //주문과 관련된 'Entity' 입니다.
     private LocalDate orderdate; //주문 날짜
     
     private OrderStatus status; //주문 상태
-
-//    public Element getProduct() {
-//        return product;
-//    }
-//
-//
-//    public int getQuantity() {
-//        return quantity;
-//    }
-//
-//    public LocalDate getOrderDate() {
-//        return orderDate;
-//    }
 }

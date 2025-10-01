@@ -49,8 +49,4 @@ public class Product {
     private String description;
 
     private LocalDate inputdate; //입고 일자
-
-//    public String getName() {
-//        return name;
-//    }
 }

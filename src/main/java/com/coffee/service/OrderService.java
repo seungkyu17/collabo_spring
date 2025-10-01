@@ -5,6 +5,8 @@ import com.coffee.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class OrderService {
@@ -14,14 +16,11 @@ public class OrderService {
         orderRepository.save(order);
     }
 
+    public List<Order> findByMemberId(Long memberId) {
+        return orderRepository.findByMemberIdOrderByIdDesc(memberId);
+    }
 
-//    @Autowired
-//    private OrderRepository orderRepository;
-//
-//    public List<OrderDto> getOrdersByUserId(Long userId) {
-//        List<Order> orders = orderRepository.findByUserId(userId);
-//        return orders.stream()
-//                .map(order = new OrderDto(order))
-//                .collect(Collectors.toList());
-
+    public List<Order> findAllOrders() {
+        return orderRepository.findAllByOrderByIdDesc();
+    }
 }

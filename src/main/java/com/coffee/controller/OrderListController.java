@@ -8,12 +8,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/orders")
 public class OrderListController {
 
-//    @Autowired
-//    private OrderService orderService;
-//
-//    @GetMapping("/{userId}")
-//    public ResponseEntity<List<OrderDto>> getOrderList(@PathVariable Long userId){
-//        List<OrderDto> orders = orderService.getOrdersByUserId(userId);
-//        return ResponseEntity.ok(orders);
-//    }
 }
