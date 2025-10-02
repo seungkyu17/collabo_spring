@@ -49,4 +49,11 @@ public class ProductService {
     public Optional<Product> findProductById(Long productId) {
         return this.productRepository.findById(productId);
     }
+
+    public List<Product> getProductByFilter(String filter) {
+        if(filter != null && !filter.isEmpty()){
+            return productRepository.findByImageContaining(filter);
+        }
+        return productRepository.findAll();
+    }
 }
